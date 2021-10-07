@@ -4,3 +4,4 @@ Simple python server that receives HTTP POST messages from a [Ruuvi Gateway](htt
 ## requirements
 - python
 - [influxdb-client-python](https://github.com/influxdata/influxdb-client-python)
+- an influxDB installation
