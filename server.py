@@ -39,7 +39,7 @@ def dewpoint(temp, hum):
 def get_data_v5(s, name):
     """The data format was implemented according to https://github.com/ruuvi/ruuvi-sensor-protocols/blob/master/dataformat_05.md"""
     bb = bytes([int(s[2*i:2*(i+1)], 16) for i in range(len(s)//2)])
-    fmt = '>BHHHhhhHBH'
+    fmt = '>BhHHhhhHBH'
     ver, temp, hum, pres, accx, accy, accz, pw_sig, movc, measID = struct.unpack_from(fmt, bb)
     temp *= 0.005
     hum = min(hum, 40000) * 0.0025
